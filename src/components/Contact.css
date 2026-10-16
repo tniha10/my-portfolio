@@ -1,0 +1,44 @@
+.contact {
+  padding: 80px 20px;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-container .section-title::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #c8c8d4;
+  margin-bottom: 32px;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.contact-email {
+  font-size: 16px;
+  color: #a0a0b0;
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 60px 20px;
+  }
+
+  .contact-text {
+    font-size: 16px;
+  }
+}
