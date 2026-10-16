@@ -1,0 +1,52 @@
+.education {
+  padding: 80px 20px;
+}
+
+.education-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.education-card {
+  background-color: #15151c;
+  border: 1px solid #2a2a35;
+  border-left: 4px solid #8b5cf6;
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.education-header h3 {
+  font-size: 22px;
+}
+
+.education-date {
+  font-size: 14px;
+  color: #a0a0b0;
+}
+
+.education-school {
+  font-size: 18px;
+  color: #8b5cf6;
+  margin-bottom: 16px;
+}
+
+.education-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #c8c8d4;
+}
+
+@media (max-width: 768px) {
+  .education {
+    padding: 60px 20px;
+  }
+}
