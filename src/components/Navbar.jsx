@@ -1,50 +1,59 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './Navbar.css'
 
+const links = [
+  { id: 'about', label: 'About' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'education', label: 'Education' },
+  { id: 'contact', label: 'Contact' },
+]
+
 function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [open, setOpen] = useState(false)
+  const [progress, setProgress] = useState(0)
 
-  function toggleMenu() {
-    setMenuOpen(!menuOpen)
-  }
-
-  function closeMenu() {
-    setMenuOpen(false)
-  }
+  useEffect(() => {
+    const onScroll = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight
+      setProgress(max > 0 ? (window.scrollY / max) * 100 : 0)
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   return (
-    <nav className="navbar">
-      <div className="navbar-container">
-        <a href="#home" className="logo">
-          Niha
+    <header className="navbar">
+      <div className="navbar-inner wrap">
+        <a href="#home" className="navbar-logo" aria-label="Back to top">
+          TN<span>.</span>
         </a>
 
-        <button className="menu-button" onClick={toggleMenu}>
-          {menuOpen ? '✕' : '☰'}
+        <button
+          type="button"
+          className="navbar-toggle"
+          aria-expanded={open}
+          aria-controls="nav-links"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? 'Close' : 'Menu'}
         </button>
 
-        <ul className={menuOpen ? 'nav-links open' : 'nav-links'}>
-          <li>
-            <a href="#about" onClick={closeMenu}>About</a>
-          </li>
-          <li>
-            <a href="#skills" onClick={closeMenu}>Skills</a>
-          </li>
-          <li>
-            <a href="#projects" onClick={closeMenu}>Projects</a>
-          </li>
-          <li>
-            <a href="#experience" onClick={closeMenu}>Experience</a>
-          </li>
-          <li>
-            <a href="#education" onClick={closeMenu}>Education</a>
-          </li>
-          <li>
-            <a href="#contact" onClick={closeMenu}>Contact</a>
-          </li>
-        </ul>
+        <nav aria-label="Main">
+          <ul id="nav-links" className={`navbar-links ${open ? 'is-open' : ''}`}>
+            {links.map(({ id, label }) => (
+              <li key={id}>
+                <a href={`#${id}`} onClick={() => setOpen(false)}>
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
-    </nav>
+      <div className="navbar-progress" style={{ width: `${progress}%` }} aria-hidden="true" />
+    </header>
   )
 }
 

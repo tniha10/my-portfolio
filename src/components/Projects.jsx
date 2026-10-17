@@ -3,102 +3,81 @@ import './Projects.css'
 const projects = [
   {
     name: 'BazarDor (বাজার দর)',
-    description:
-      'A responsive web app that tracks daily market prices of essential goods in Bangladesh, shown in Bangla with Bengali numerals. Signed-in users can compare prices across different bazaars.',
-    tech: ['Next.js', 'React', 'Tailwind CSS', 'DaisyUI', 'Better Auth'],
+    description: 'A responsive web application tracking daily retail market prices of essential agricultural and household products in Bangladesh. Features an intuitive Bangla translation UI built with custom numerals, enabling localized cross-bazaar price indexing calculations.',
+    tech: ['Next.js', 'React', 'Tailwind CSS', 'DaisyUI', 'Better Auth', 'MongoDB'],
     live: 'https://b14-a7-bazar-dor-fawn.vercel.app/',
     github: '',
   },
   {
-    name: 'FitLog',
-    description:
-      'A workout library and planning app. Browse workouts, sort them, save favorites, build a daily plan, and track your workout stats.',
+    name: 'Bangla Voice Automated CRM',
+    description: 'An advanced pipeline architecture recording streaming Bangla voice signals, transcribing data through localized BanglaASR, extracting nested fields via tokenization layers, and storing logs internally.',
+    tech: ['Flutter', 'Dart', 'BanglaASR', 'SQLite', 'Local DB'],
+    live: '',
+    github: 'https://github.com/tniha10',
+  },
+  {
+    name: 'LTLC-HSI Optimization Framework',
+    description: 'Leakage-controlled evaluation workflows optimizing long-tail sample distribution matrices for hyperspectral imaging (HSI). Implemented with class-prior logit adjustments across spatially disjoint validation sets.',
+    tech: ['Python', 'PyTorch', 'HybridSN', 'Jupyter Notebook'],
+    live: '',
+    github: 'https://github.com/tniha10',
+  },
+  {
+    name: 'FitLog Tracking Companion',
+    description: 'A dedicated, lightweight fitness management suite built to log custom physical movement routines, browse exercises, organize individual daily lists, and compute cumulative performance parameters.',
     tech: ['Next.js', 'React', 'Tailwind CSS', 'JavaScript', 'REST API'],
     live: 'https://b14-a06-fit-log-taupe.vercel.app/',
     github: '',
   },
   {
     name: 'Dev Stack Builder',
-    description:
-      'Explore frontend, backend, database and tooling options, compare them side by side, and build your ideal development stack.',
+    description: 'Interactive structural application matrix that visualizes individual deployment layers side-by-side. Helps teams balance database schemas, compute modules, and framework constraints seamlessly.',
     tech: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
     live: 'https://phenomenal-melomakarona-bda494.netlify.app/',
     github: '',
   },
   {
-    name: 'HustleUp',
-    description:
-      'A peer-to-peer skill-sharing platform for university students. Students enroll in sections taught by mentors and earn certificates. Built on a seven-table MySQL database with role-based access.',
-    tech: ['PHP', 'MySQL', 'HTML', 'CSS'],
-    live: '',
-    github: '',
-  },
-  {
-    name: 'New Year Offer Landing Page',
-    description:
-      'A desktop landing page for a New Year sale, built with plain HTML and CSS to practice turning a design into clean code.',
-    tech: ['HTML', 'CSS'],
-    live: 'https://tniha10.github.io/new-year/',
-    github: '',
-  },
-  {
-    name: 'Catch the Ball',
-    description:
-      'A Java desktop arcade game where you move a paddle to catch falling objects before you run out of lives.',
-    tech: ['Java', 'Swing', 'AWT'],
+    name: 'Catch the Ball (Arcade Engine)',
+    description: 'A complete desktop game implementation managing graphical loop refreshing sequences, structural matrix math coordinates, object-oriented collision tracking engines, and custom score exceptions.',
+    tech: ['Java', 'Java Swing', 'Java AWT', 'Generics'],
     live: '',
     github: 'https://github.com/tniha10/catch-the-ball-game',
-  },
+  }
 ]
 
 function Projects() {
   return (
     <section id="projects" className="projects">
-      <div className="projects-container">
-        <h2 className="section-title">Projects</h2>
-
+      <div className="wrap">
+        <h2 className="section-title">Featured Projects</h2>
         <div className="projects-grid">
-          {projects.map(function (project) {
-            return (
-              <div className="project-card" key={project.name}>
+          {projects.map((project) => (
+            <div className="project-card" key={project.name}>
+              <div className="project-card-header">
                 <h3>{project.name}</h3>
                 <p>{project.description}</p>
-
-                <div className="project-tags">
-                  {project.tech.map(function (item) {
-                    return (
-                      <span className="project-tag" key={item}>
-                        {item}
-                      </span>
-                    )
-                  })}
-                </div>
-
-                <div className="project-links">
-                  {project.live && (
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="button button-filled"
-                    >
-                      Live Demo
-                    </a>
-                  )}
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="button button-outline"
-                    >
-                      GitHub
-                    </a>
-                  )}
-                </div>
               </div>
-            )
-          })}
+
+              <div className="project-tags">
+                {project.tech.map((item) => (
+                  <span className="project-tag" key={item}>{item}</span>
+                ))}
+              </div>
+
+              <div className="project-links">
+                {project.live && (
+                  <a href={project.live} target="_blank" rel="noreferrer" className="button button-filled">
+                    Live Demo
+                  </a>
+                )}
+                {project.github && (
+                  <a href={project.github} target="_blank" rel="noreferrer" className="button button-outline">
+                    GitHub Code
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
