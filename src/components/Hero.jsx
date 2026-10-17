@@ -13,7 +13,7 @@ function Hero() {
             Tahsina <em>Mamun Niha</em>
           </h1>
           <p className="hero-role">
-            Computer Science and Engineering student &amp; aspiring full-stack developer.
+            Computer Science and Engineering student and aspiring full-stack developer.
           </p>
           <p className="hero-intro">
             I'm an undergraduate at North South University who enjoys transforming ideas into interactive digital tools. This site holds the things I have built and what I am currently learning.
@@ -31,7 +31,7 @@ function Hero() {
           <div className="photo-frame">
             {photoOk ? (
               <img
-                src="/niha.jpg"
+                src={`${import.meta.env.BASE_URL}niha.jpg`}
                 alt="Portrait of Tahsina Mamun Niha"
                 onError={() => setPhotoOk(false)}
               />
