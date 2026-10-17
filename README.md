@@ -30,7 +30,7 @@ I'm a Computer Science and Engineering undergraduate at North South University a
 ## Project Structure
 my-portfolio/
 ├── .github/            # GitHub configuration (deployment workflow)
-├── public/             # Static files (favicon, niha.jpg)
+├── public/             
 ├── src/
 │   ├── assets/
 │   └── components/     # One .jsx and .css file per section
