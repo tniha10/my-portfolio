@@ -1,16 +1,57 @@
-# React + Vite
+# Tahsina Mamun Niha | Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal portfolio website showcasing who I am, the skills I have, and the things I have built.
 
-Currently, two official plugins are available:
+**Live site:** https://tniha10.github.io/my-portfolio/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## About
+I'm a Computer Science and Engineering undergraduate at North South University and an aspiring full-stack developer. I enjoy turning ideas into interactive digital tools, and this site holds the projects I have built and what I am currently learning.
 
-## React Compiler
+## Sections
+- **Home**: introduction and quick links
+- **About**
+- **Skills**
+- **Projects**
+- **Experience**
+- **Education**
+- **Contact**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Built With
+- React
+- Vite
+- CSS 
+- ESLint
+- Deployed with GitHub Pages
 
-## Expanding the ESLint configuration
+### Prerequisites
+- Node.js
+- npm (comes with Node.js)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project Structure
+my-portfolio/
+├── .github/            # GitHub configuration (deployment workflow)
+├── public/             # Static files (favicon, niha.jpg)
+├── src/
+│   ├── assets/
+│   └── components/     # One .jsx and .css file per section
+│       ├── Navbar
+│       ├── Hero
+│       ├── About
+│       ├── Skills
+│       ├── Projects
+│       ├── Experience
+│       ├── Education
+│       ├── Contact
+│       └── Footer
+├── index.html
+├── vite.config.js
+└── package.json
+
+## Deployment
+The site is hosted on GitHub Pages at `/my-portfolio/`, so `vite.config.js` sets:
+js
+base: "/my-portfolio/"
+
+Static files from `public/` must be referenced with the base path, for example:
+jsx
+<img src={`${import.meta.env.BASE_URL}niha.jpg`} alt="Portrait" />
