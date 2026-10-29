@@ -31,32 +31,6 @@ This portfolio website showcases my background, technical skills, projects, expe
 - **Git & GitHub** — Version control and source code management.
 - **Vercel** — Deployment and hosting.
 
-## 📂 Project Structure
-
-```text
-my-portfolio/
-├── public/                  # Public static assets
-├── src/
-│   ├── components/
-│   │   ├── Navbar
-│   │   ├── Hero
-│   │   ├── About
-│   │   ├── Skills
-│   │   ├── Projects
-│   │   ├── Experience
-│   │   ├── Education
-│   │   ├── Contact
-│   │   └── Footer
-│   ├── App.jsx              # Main application component
-│   └── main.jsx             # Application entry point
-├── index.html
-├── package.json
-├── vite.config.js
-├── eslint.config.js
-└── README.md
-```
-
-*Note: The structure above highlights the main files and components. Your repository may contain additional files and assets.*
 
 ## 🚀 Getting Started
 
