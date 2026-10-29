@@ -1,22 +1,5 @@
 
-import { useState } from 'react'
-
 function Contact() {
-  const [hoveredLink, setHoveredLink] = useState('')
-
-  const contactLinks = [
-    {
-      name: 'GitHub',
-      url: 'https://github.com/tniha10',
-      label: 'View my GitHub profile',
-    },
-    {
-      name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/tahsina-niha',
-      label: 'Connect with me on LinkedIn',
-    },
-  ]
-
   return (
     <>
       <style>{`
@@ -65,6 +48,7 @@ function Contact() {
           font-size: 0.95rem;
           font-weight: 600;
           text-decoration: none;
+          cursor: pointer;
           transition:
             background-color 0.2s ease,
             color 0.2s ease,
@@ -99,12 +83,34 @@ function Contact() {
           outline-offset: 4px;
         }
 
-        .contact-email {
+        .contact-details {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 12px;
+          margin-top: 8px;
+        }
+
+        .contact-detail {
           margin: 0;
-          font-family: var(--mono);
-          font-size: 0.9rem;
           color: var(--sage-deep);
+          font-size: 0.95rem;
+          line-height: 1.7;
           overflow-wrap: anywhere;
+        }
+
+        .contact-detail a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        .contact-detail a:hover {
+          text-decoration: underline;
+        }
+
+        .contact-label {
+          font-weight: 600;
+          margin-right: 6px;
         }
 
         @media (max-width: 480px) {
@@ -155,28 +161,42 @@ function Contact() {
               Email Me
             </a>
 
-            {contactLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={link.label}
-                className="button button-outline"
-                onMouseEnter={() => setHoveredLink(link.name)}
-                onMouseLeave={() => setHoveredLink('')}
-              >
-                {link.name}
-                {hoveredLink === link.name && (
-                  <span aria-hidden="true"> ↗</span>
-                )}
-              </a>
-            ))}
+            <a
+              href="https://github.com/tniha10"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button button-outline"
+              aria-label="View my GitHub profile"
+            >
+              GitHub ↗
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/tahsina-niha"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button button-outline"
+              aria-label="Connect with me on LinkedIn"
+            >
+              LinkedIn ↗
+            </a>
           </div>
 
-          <p className="contact-email">
-            tahsinamamun10@gmail.com
-          </p>
+          <div className="contact-details">
+            <p className="contact-detail">
+              <span className="contact-label">Email:</span>
+              <a href="mailto:tahsinamamun10@gmail.com">
+                tahsinamamun10@gmail.com
+              </a>
+            </p>
+
+            <p className="contact-detail">
+              <span className="contact-label">Phone:</span>
+              <a href="tel:+8801600315677">
+                +8801600315677
+              </a>
+            </p>
+          </div>
         </div>
       </section>
     </>
