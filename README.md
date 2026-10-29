@@ -1,57 +1,142 @@
-# Tahsina Mamun Niha | Portfolio
+# Personal Portfolio Website
 
-A personal portfolio website showcasing who I am, the skills I have, and the things I have built.
+Welcome to my personal portfolio! 👋
 
-**Live site:** https://tniha10.github.io/my-portfolio/
+This portfolio website showcases my background, technical skills, projects, experience, education, and contact information in one place. It is designed to introduce who I am, highlight my work, and make it easy to connect with me.
 
-## About
-I'm a Computer Science and Engineering undergraduate at North South University and an aspiring full-stack developer. I enjoy turning ideas into interactive digital tools, and this site holds the projects I have built and what I am currently learning.
+## 🌐 Live Demo
 
-## Sections
-- **Home**: introduction and quick links
-- **About**
-- **Skills**
-- **Projects**
-- **Experience**
-- **Education**
-- **Contact**
+- **Portfolio:** [View My Portfolio](https://my-portfolio-red-six-27.vercel.app/)
+- **GitHub Repository:** [my-portfolio](https://github.com/tniha10/my-portfolio)
 
-## Built With
-- React
-- Vite
-- CSS 
-- ESLint
-- Deployed with GitHub Pages
+## ✨ Features
+
+- **Responsive Navigation Bar** — Easy navigation between portfolio sections.
+- **Hero Section** — Introduction and professional profile.
+- **About Me** — Information about my background and interests.
+- **Skills Section** — Overview of my technical skills.
+- **Projects Section** — Showcase of my projects and work.
+- **Experience Section** — Highlights of my professional and practical experience.
+- **Education Section** — Academic background and qualifications.
+- **Contact Section** — Ways to connect with me.
+- **Scroll Animations** — Smooth reveal effects as sections enter the viewport.
+- **Accessibility Support** — Includes a skip-to-content link for easier keyboard navigation.
+
+## 🛠️ Technologies Used
+
+- **React 19** — Building reusable UI components.
+- **JavaScript (ES6+)** — Application logic and interactivity.
+- **Vite** — Development server and production build tool.
+- **CSS** — Styling and layout.
+- **Git & GitHub** — Version control and source code management.
+- **Vercel** — Deployment and hosting.
+
+## 📂 Project Structure
+
+```text
+my-portfolio/
+├── public/                  # Public static assets
+├── src/
+│   ├── components/
+│   │   ├── Navbar
+│   │   ├── Hero
+│   │   ├── About
+│   │   ├── Skills
+│   │   ├── Projects
+│   │   ├── Experience
+│   │   ├── Education
+│   │   ├── Contact
+│   │   └── Footer
+│   ├── App.jsx              # Main application component
+│   └── main.jsx             # Application entry point
+├── index.html
+├── package.json
+├── vite.config.js
+├── eslint.config.js
+└── README.md
+```
+
+*Note: The structure above highlights the main files and components. Your repository may contain additional files and assets.*
+
+## 🚀 Getting Started
+
+Follow these steps to run the project locally.
 
 ### Prerequisites
-- Node.js
-- npm (comes with Node.js)
 
-## Project Structure
-my-portfolio/
-├── .github/            # GitHub configuration (deployment workflow)
-├── public/             
-├── src/
-│   ├── assets/
-│   └── components/     # One .jsx and .css file per section
-│       ├── Navbar
-│       ├── Hero
-│       ├── About
-│       ├── Skills
-│       ├── Projects
-│       ├── Experience
-│       ├── Education
-│       ├── Contact
-│       └── Footer
-├── index.html
-├── vite.config.js
-└── package.json
+Make sure you have the following installed:
 
-## Deployment
-The site is hosted on GitHub Pages at `/my-portfolio/`, so `vite.config.js` sets:
-js
-base: "/my-portfolio/"
+- [Node.js](https://nodejs.org/)
+- npm (included with Node.js)
+- Git
 
-Static files from `public/` must be referenced with the base path, for example:
-jsx
-<img src={`${import.meta.env.BASE_URL}niha.jpg`} alt="Portrait" />
+### Installation
+
+**1. Clone the repository**
+
+```bash
+git clone https://github.com/tniha10/my-portfolio.git
+```
+
+**2. Navigate to the project directory**
+
+```bash
+cd my-portfolio
+```
+
+**3. Install dependencies**
+
+```bash
+npm install
+```
+
+**4. Start the development server**
+
+```bash
+npm run dev
+```
+
+**5. Open the local website**
+
+Open the local URL displayed in your terminal, usually:
+
+```text
+http://localhost:5173
+```
+
+## 📜 Available Scripts
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Starts the development server. |
+| `npm run build` | Builds the project for production. |
+| `npm run preview` | Previews the production build locally. |
+| `npm run lint` | Checks the code for linting issues. |
+
+## 🚀 Deployment
+
+This project can be deployed using [Vercel](https://vercel.com/).
+
+1. Push the project to GitHub.
+2. Import the repository into Vercel.
+3. Select **Vite** as the framework preset.
+4. Set the build command to `npm run build`.
+5. Set the output directory to `dist`.
+6. Click **Deploy**.
+
+Once deployment is complete, Vercel will provide a URL for the live portfolio.
+
+## 🎯 Purpose
+
+The purpose of this project is to build my personal online presence, present my skills and projects, and continue improving my frontend development skills through practical experience.
+
+## 👩‍💻 Author
+
+**Tahsina Mamun Niha**
+
+- GitHub: [@tniha10](https://github.com/tniha10)
+- Portfolio: [Visit My Website](https://my-portfolio-red-six-27.vercel.app/)
+
+---
+
+⭐ Thank you for visiting my portfolio repository!
