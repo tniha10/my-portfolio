@@ -1,23 +1,25 @@
+
 const experiences = [
   {
     role: 'Python Programming Intern',
     company: 'Datheon',
-    date: 'Oct 2026 – Nov 2026',
+    date: 'OCT 2026 — 12 NOV 2026',
     location: 'Remote',
     type: 'Technical Experience',
+    github: 'https://github.com/tniha10/Datheon_Python_Programming',
     description:
       'Selected for a four-week virtual engineering cohort focused on project-based software development and practical problem-solving.',
     responsibilities: [
-      'Apply AI foundations and core algorithms to practical system integration tasks.',
-      'Develop structured, maintainable Python code using software engineering best practices.',
-      'Practice version control and industry-standard development workflows.',
+      'Applied AI foundations and core algorithms to practical system integration tasks.',
+      'Developed structured, maintainable Python code using software engineering best practices.',
+      'Practiced version control and industry-standard development workflows.',
     ],
     skills: ['Python', 'Artificial Intelligence', 'Algorithms', 'Git'],
   },
   {
     role: 'Co-Founder',
     company: 'Crescent Books',
-    date: 'May 2023 – Present',
+    date: 'MAY 2023 — PRESENT',
     location: 'Dhaka, Bangladesh',
     type: 'Entrepreneurship',
     description:
@@ -40,285 +42,289 @@ function Experience() {
   return (
     <>
       <style>{`
-        .experience {
-          padding: 100px 24px;
-          max-width: 1000px;
+        .experience-editorial {
+          background: #f2ebdd;
+          color: #123c32;
+          padding: 110px 7%;
+          scroll-margin-top: 80px;
+        }
+
+        .experience-editorial-container {
+          max-width: 1150px;
           margin: 0 auto;
         }
 
-        .experience-container {
-          width: 100%;
+        .experience-editorial-label {
+          color: #e34234;
+          font-size: 0.78rem;
+          font-weight: 700;
+          letter-spacing: 3px;
+          margin-bottom: 20px;
         }
 
-        .experience-intro {
-          max-width: 600px;
-          margin: -8px 0 40px;
-          color: var(--text-muted);
+        .experience-editorial-title {
+          font-family: Georgia, serif;
+          font-size: clamp(3rem, 7vw, 5.5rem);
+          font-weight: 400;
+          letter-spacing: -3px;
+          line-height: 1.05;
+          margin-bottom: 22px;
+        }
+
+        .experience-editorial-intro {
+          max-width: 620px;
+          color: #64736a;
           font-size: 1rem;
-          line-height: 1.8;
+          line-height: 1.9;
+          margin-bottom: 65px;
         }
 
-        .experience-list {
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          gap: 28px;
+        .experience-editorial-list {
+          border-top: 1px solid #c9c1b1;
         }
 
-        .experience-card {
-          position: relative;
-          padding: 32px;
-          background: var(--sage-light);
-          border: 1px solid var(--sage-border);
-          border-radius: 14px;
-          transition:
-            transform 0.25s ease,
-            box-shadow 0.25s ease,
-            border-color 0.25s ease;
+        .experience-editorial-item {
+          display: grid;
+          grid-template-columns: 1fr 230px;
+          gap: 45px;
+          padding: 45px 0;
+          border-bottom: 1px solid #c9c1b1;
         }
 
-        .experience-card:hover {
-          transform: translateY(-4px);
-          border-color: var(--sage-accent);
-          box-shadow: 0 12px 30px rgba(61, 74, 59, 0.08);
-        }
-
-        .experience-top {
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-start;
-          flex-wrap: wrap;
-          gap: 16px;
+        .experience-editorial-type {
+          color: #e34234;
+          font-size: 0.75rem;
+          font-weight: 700;
+          letter-spacing: 2px;
+          text-transform: uppercase;
           margin-bottom: 18px;
         }
 
-        .experience-heading {
-          flex: 1;
-          min-width: 220px;
+        .experience-editorial-role {
+          font-family: Georgia, serif;
+          font-size: clamp(1.8rem, 4vw, 2.6rem);
+          font-weight: 400;
+          line-height: 1.2;
+          margin-bottom: 10px;
         }
 
-        .experience-type {
-          display: inline-block;
-          margin-bottom: 12px;
-          padding: 5px 10px;
-          border: 1px solid var(--sage-border);
-          border-radius: 20px;
-          color: var(--sage-accent);
-          font-size: 0.75rem;
-          font-weight: 600;
-          letter-spacing: 0.04em;
-          text-transform: uppercase;
-        }
-
-        .experience-header h3 {
-          margin: 0 0 7px;
-          color: var(--text-primary);
-          font-family: var(--sans);
-          font-size: clamp(1.25rem, 3vw, 1.55rem);
-          font-weight: 650;
-        }
-
-        .experience-company {
-          margin: 0;
-          color: var(--sage-accent);
+        .experience-editorial-company {
           font-size: 1.05rem;
-          font-weight: 600;
+          font-weight: 700;
+          margin-bottom: 20px;
         }
 
-        .experience-meta {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-end;
-          gap: 7px;
-          color: var(--text-muted);
-          font-size: 0.85rem;
-          text-align: right;
-        }
-
-        .experience-date {
-          font-family: var(--mono);
-        }
-
-        .experience-location {
-          display: flex;
-          align-items: center;
-          gap: 6px;
-        }
-
-        .experience-text {
-          margin: 0 0 22px;
-          color: var(--text-muted);
-          font-size: 0.98rem;
-          line-height: 1.8;
-        }
-
-        .experience-subtitle {
-          margin: 0 0 12px;
-          color: var(--text-primary);
+        .experience-editorial-description {
+          max-width: 720px;
+          color: #64736a;
           font-size: 0.95rem;
-          font-weight: 600;
+          line-height: 1.9;
+          margin-bottom: 20px;
         }
 
-        .experience-responsibilities {
-          display: flex;
-          flex-direction: column;
-          gap: 11px;
-          margin: 0 0 24px;
-          padding: 0;
+        .experience-editorial-github {
+          display: inline-block;
+          margin-bottom: 28px;
+          color: #e34234;
+          font-size: 0.9rem;
+          font-weight: 700;
+          text-decoration: none;
+          border-bottom: 1px solid #e34234;
+          padding-bottom: 5px;
+          transition: color 0.2s ease;
+        }
+
+        .experience-editorial-github:hover {
+          color: #123c32;
+        }
+
+        .experience-editorial-subtitle {
+          font-size: 0.78rem;
+          font-weight: 700;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          margin-bottom: 16px;
+        }
+
+        .experience-editorial-responsibilities {
           list-style: none;
+          padding: 0;
+          margin: 0 0 28px;
         }
 
-        .experience-responsibilities li {
+        .experience-editorial-responsibilities li {
           display: flex;
           align-items: flex-start;
           gap: 12px;
-          color: var(--text-muted);
-          font-size: 0.94rem;
-          line-height: 1.75;
+          color: #40574b;
+          font-size: 0.92rem;
+          line-height: 1.8;
+          margin-bottom: 12px;
         }
 
-        .experience-bullet {
+        .experience-editorial-bullet {
           flex-shrink: 0;
-          margin-top: 9px;
           width: 7px;
           height: 7px;
-          border-radius: 50%;
-          background: var(--sage-accent);
+          margin-top: 9px;
+          background: #e34234;
         }
 
-        .experience-skills {
+        .experience-editorial-skills {
           display: flex;
           flex-wrap: wrap;
           gap: 9px;
-          padding-top: 20px;
-          border-top: 1px solid var(--sage-border);
         }
 
-        .experience-skill {
-          padding: 7px 12px;
-          border: 1px solid var(--sage-border);
-          border-radius: 7px;
-          color: var(--text-muted);
-          font-size: 0.8rem;
-          background: rgba(255, 255, 255, 0.35);
+        .experience-editorial-skill {
+          padding: 8px 12px;
+          border: 1px solid #c9c1b1;
+          color: #40574b;
+          font-size: 0.82rem;
         }
 
-        @media (max-width: 600px) {
-          .experience {
-            padding: 72px 18px;
+        .experience-editorial-meta {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          gap: 12px;
+          text-align: right;
+        }
+
+        .experience-editorial-date {
+          color: #e34234;
+          font-size: 0.82rem;
+          font-weight: 700;
+          line-height: 1.6;
+        }
+
+        .experience-editorial-location {
+          color: #788178;
+          font-size: 0.88rem;
+        }
+
+        @media (max-width: 700px) {
+          .experience-editorial {
+            padding: 80px 6%;
           }
 
-          .experience-card {
-            padding: 23px 19px;
+          .experience-editorial-item {
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 35px 0;
           }
 
-          .experience-top {
-            flex-direction: column;
-            gap: 12px;
-          }
-
-          .experience-heading {
-            min-width: 0;
-          }
-
-          .experience-meta {
+          .experience-editorial-meta {
             align-items: flex-start;
             text-align: left;
           }
 
-          .experience-responsibilities li {
-            font-size: 0.9rem;
-          }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .experience-card {
-            transition: none;
-          }
-
-          .experience-card:hover {
-            transform: none;
+          .experience-editorial-intro {
+            margin-bottom: 45px;
           }
         }
       `}</style>
 
-      <section id="experience" className="experience">
-        <div className="experience-container">
-          <h2 className="section-title">Experience</h2>
+      <section
+        id="experience"
+        className="experience-editorial"
+      >
+        <div className="experience-editorial-container">
 
-          <p className="experience-intro">
-            My journey combines hands-on software development experience
-            with entrepreneurship, continuous learning, and building
-            meaningful experiences for people.
+          <p className="experience-editorial-label">
+            05 / PROFESSIONAL EXPERIENCE
           </p>
 
-          <div className="experience-list">
-            {experiences.map((experience) => (
+          <h2 className="experience-editorial-title">
+            Experience<span style={{ color: '#e34234' }}>.</span>
+          </h2>
+
+          <p className="experience-editorial-intro">
+            My experience combines software development,
+            entrepreneurship, and practical problem-solving.
+            I enjoy learning through real-world projects,
+            collaboration, and building meaningful solutions.
+          </p>
+
+          <div className="experience-editorial-list">
+
+            {experiences.map((experience, index) => (
               <article
-                className="experience-card"
+                className="experience-editorial-item"
                 key={experience.company}
               >
-                <div className="experience-top">
-                  <div className="experience-heading">
-                    <span className="experience-type">
-                      {experience.type}
-                    </span>
+                <div>
+                  <p className="experience-editorial-type">
+                    0{index + 1} / {experience.type}
+                  </p>
 
-                    <div className="experience-header">
-                      <h3>{experience.role}</h3>
-                    </div>
+                  <h3 className="experience-editorial-role">
+                    {experience.role}
+                  </h3>
 
-                    <p className="experience-company">
-                      {experience.company}
-                    </p>
-                  </div>
+                  <p className="experience-editorial-company">
+                    {experience.company}
+                  </p>
 
-                  <div className="experience-meta">
-                    <span className="experience-date">
-                      {experience.date}
-                    </span>
+                  <p className="experience-editorial-description">
+                    {experience.description}
+                  </p>
 
-                    <span className="experience-location">
-                      <span aria-hidden="true">⌖</span>
-                      {experience.location}
-                    </span>
-                  </div>
-                </div>
-
-                <p className="experience-text">
-                  {experience.description}
-                </p>
-
-                <h4 className="experience-subtitle">
-                  Key Responsibilities
-                </h4>
-
-                <ul className="experience-responsibilities">
-                  {experience.responsibilities.map(
-                    (responsibility) => (
-                      <li key={responsibility}>
-                        <span
-                          className="experience-bullet"
-                          aria-hidden="true"
-                        />
-                        <span>{responsibility}</span>
-                      </li>
-                    )
+                  {experience.github && (
+                    <a
+                      href={experience.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="experience-editorial-github"
+                    >
+                      View Internship Projects ↗
+                    </a>
                   )}
-                </ul>
 
-                <div
-                  className="experience-skills"
-                  aria-label="Relevant skills"
-                >
-                  {experience.skills.map((skill) => (
-                    <span className="experience-skill" key={skill}>
-                      {skill}
-                    </span>
-                  ))}
+                  <h4 className="experience-editorial-subtitle">
+                    Key Responsibilities
+                  </h4>
+
+                  <ul className="experience-editorial-responsibilities">
+                    {experience.responsibilities.map(
+                      (responsibility) => (
+                        <li key={responsibility}>
+                          <span
+                            className="experience-editorial-bullet"
+                            aria-hidden="true"
+                          />
+
+                          <span>{responsibility}</span>
+                        </li>
+                      )
+                    )}
+                  </ul>
+
+                  <div className="experience-editorial-skills">
+                    {experience.skills.map((skill) => (
+                      <span
+                        className="experience-editorial-skill"
+                        key={skill}
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
+
+                <div className="experience-editorial-meta">
+                  <p className="experience-editorial-date">
+                    {experience.date}
+                  </p>
+
+                  <p className="experience-editorial-location">
+                    {experience.location}
+                  </p>
+                </div>
+
               </article>
             ))}
+
           </div>
         </div>
       </section>

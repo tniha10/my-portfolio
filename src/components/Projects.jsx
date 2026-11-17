@@ -3,14 +3,46 @@ import { useState } from 'react'
 
 const projects = [
   {
+    name: 'StudioSpace',
+    category: 'Full-Stack Web Application',
+    image: '/studiospace.png',
+    imageAlt: 'StudioSpace creative studio marketplace homepage',
+    description:
+      'A peer-to-peer marketplace where creators can discover photography studios, sound stages, podcast rooms, music suites, and art workshops.',
+    tech: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'DaisyUI',
+      'Express',
+      'MongoDB',
+      'Better Auth',
+    ],
+    live: 'https://studiospace-eosin.vercel.app/',
+    github: 'https://github.com/tniha10/studiospace',
+    challenge:
+      'Building a marketplace with studio discovery, search and filtering, authentication, studio management, and a booking workflow. Booking requests also need server-side validation and protection against overlapping reservations.',
+    improvements:
+      'Continue improving the booking experience, expand testing, and add more features for studio hosts and creators.',
+    details:
+      'StudioSpace is a creative-studio marketplace. Hosts can list their spaces, while creators can explore studios and request bookings. Booking requests begin with Pending status, and the application uses the listed studio rate for pricing.',
+  },
+  {
     name: 'BazarDor (বাজার দর)',
     category: 'Full-Stack Web Application',
-    image:
-      'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=85',
-    imageAlt: 'Fresh produce displayed at a market',
+    image: '/bazardor.png',
+    imageAlt: 'BazarDor Bangla market price tracker homepage',
     description:
       'A responsive web application that helps users explore and compare daily market prices of essential products in Bangladesh.',
-    tech: ['Next.js', 'React', 'Tailwind CSS', 'DaisyUI', 'Better Auth', 'MongoDB'],
+    tech: [
+      'Next.js',
+      'React',
+      'Tailwind CSS',
+      'DaisyUI',
+      'Better Auth',
+      'MongoDB',
+    ],
     live: 'https://b14-a7-bazar-dor-fawn.vercel.app/',
     github: '',
     challenge:
@@ -21,65 +53,10 @@ const projects = [
       'Developed a localized market-price application with a responsive interface and Bangla-friendly presentation. The application uses Next.js and React for the interface, Better Auth for authentication, and MongoDB for product and price data.',
   },
   {
-    name: 'Bangla Voice Automated CRM',
-    category: 'Capstone Project',
-    image:
-      'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=1200&q=85',
-    imageAlt: 'Audio recording equipment for a voice application',
-    description:
-      'A Flutter mobile application that uses Bangla speech recognition to capture spoken information and organize customer leads.',
-    tech: ['Flutter', 'Dart', 'BanglaASR', 'SQLite', 'Local Database'],
-    live: '',
-    github: '',
-    challenge:
-      'Connecting Bangla speech transcription with structured field extraction and local data storage while keeping the workflow practical for recording customer information.',
-    improvements:
-      'Improve transcription accuracy, validate extracted fields, add lead search and editing, and explore secure backup and synchronization.',
-    details:
-      'This capstone project combines speech recognition and mobile development to transcribe Bangla speech and extract CRM fields such as name, phone number, address, location, and product interest. The extracted records are stored in a local database.',
-  },
-  {
-    name: 'LTLC-HSI Optimization Framework',
-    category: 'Undergraduate Research',
-    image:
-      'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85',
-    imageAlt: 'Electronic components representing computational research',
-    description:
-      'A research project investigating long-tail class distributions in hyperspectral image classification using deep learning.',
-    tech: ['Python', 'PyTorch', 'Deep Learning', 'HybridSN', 'Jupyter Notebook'],
-    live: '',
-    github: '',
-    challenge:
-      'Preventing data leakage between training and validation samples and evaluating classification performance when some classes have far fewer samples than others.',
-    improvements:
-      'Evaluate additional long-tail correction strategies, compare performance across datasets, analyze per-class metrics, and improve reproducibility of experiments.',
-    details:
-      'Conducted undergraduate research on long-tail correction for hyperspectral image classification. The work uses spatially disjoint training and validation splits, the HybridSN architecture, and class-prior-based logit adjustment.',
-  },
-  {
-    name: 'HustleUp',
-    category: 'Full-Stack Web Application',
-    image:
-      'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85',
-    imageAlt: 'Students and colleagues collaborating on a project',
-    description:
-      'A peer-to-peer skill-sharing platform designed to help university students exchange skills and academic support.',
-    tech: ['PHP', 'MySQL', 'HTML5', 'CSS3', 'Database Design'],
-    live: '',
-    github: '',
-    challenge:
-      'Designing a relational database for user profiles and session scheduling while connecting backend business logic with responsive frontend pages.',
-    improvements:
-      'Add reviews and ratings, improve skill discovery, develop booking notifications, and strengthen session management and account security.',
-    details:
-      'Built a platform concept for university students to exchange certified skills and academic support. The project uses PHP for backend business logic and MySQL for relational data, including user profiles and session scheduling.',
-  },
-  {
     name: 'FitLog Tracking Companion',
     category: 'Fitness Web Application',
-    image:
-      'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1200&q=85',
-    imageAlt: 'Fitness training in a gym',
+    image: '/fitlog.png',
+    imageAlt: 'FitLog workout library homepage',
     description:
       'A fitness web application for browsing workouts, organizing exercise routines, and tracking training activities.',
     tech: ['Next.js', 'React', 'Tailwind CSS', 'JavaScript', 'REST API'],
@@ -95,9 +72,8 @@ const projects = [
   {
     name: 'Dev Stack Builder',
     category: 'Developer Tool',
-    image:
-      'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=85',
-    imageAlt: 'Code displayed on a developer workstation',
+    image: '/devstack.png',
+    imageAlt: 'Dev Stack Builder technology explorer homepage',
     description:
       'An interactive technology library that helps users explore development tools, frameworks, languages, and databases.',
     tech: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
@@ -111,11 +87,65 @@ const projects = [
       'Built a responsive technology-card interface featuring development tools across categories such as frontend, backend, databases, languages, and DevOps. The project uses reusable React components and structured technology data.',
   },
   {
+    name: 'Bangla Voice Automated CRM',
+    category: 'Capstone Project',
+    coverTitle: 'Bangla Voice',
+    coverSubtitle: 'Speech Recognition · CRM',
+    imageAlt: 'Custom cover for Bangla Voice Automated CRM',
+    description:
+      'A Flutter mobile application that uses Bangla speech recognition to capture spoken information and organize customer leads.',
+    tech: ['Flutter', 'Dart', 'BanglaASR', 'SQLite', 'Local Database'],
+    live: '',
+    github: '',
+    challenge:
+      'Connecting Bangla speech transcription with structured field extraction and local data storage while keeping the workflow practical for recording customer information.',
+    improvements:
+      'Improve transcription accuracy, validate extracted fields, add lead search and editing, and explore secure backup and synchronization.',
+    details:
+      'This capstone project combines speech recognition and mobile development to transcribe Bangla speech and extract CRM fields such as name, phone number, address, location, and product interest. The extracted records are stored in a local database.',
+  },
+  {
+    name: 'LTLC-HSI Optimization Framework',
+    category: 'Undergraduate Research',
+    coverTitle: 'LTLC / HSI',
+    coverSubtitle: 'Deep Learning · Research',
+    imageAlt: 'Custom cover for LTLC-HSI Optimization Framework',
+    description:
+      'A research project investigating long-tail class distributions in hyperspectral image classification using deep learning.',
+    tech: ['Python', 'PyTorch', 'Deep Learning', 'HybridSN', 'Jupyter Notebook'],
+    live: '',
+    github: '',
+    challenge:
+      'Preventing data leakage between training and validation samples and evaluating classification performance when some classes have far fewer samples than others.',
+    improvements:
+      'Evaluate additional long-tail correction strategies, compare performance across datasets, analyze per-class metrics, and improve reproducibility of experiments.',
+    details:
+      'Conducted undergraduate research on long-tail correction for hyperspectral image classification. The work uses spatially disjoint training and validation splits, the HybridSN architecture, and class-prior-based logit adjustment.',
+  },
+  {
+    name: 'HustleUp',
+    category: 'Full-Stack Web Application',
+    coverTitle: 'HustleUp',
+    coverSubtitle: 'Skill Sharing · Community',
+    imageAlt: 'Custom cover for HustleUp',
+    description:
+      'A peer-to-peer skill-sharing platform designed to help university students exchange skills and academic support.',
+    tech: ['PHP', 'MySQL', 'HTML5', 'CSS3', 'Database Design'],
+    live: '',
+    github: '',
+    challenge:
+      'Designing a relational database for user profiles and session scheduling while connecting backend business logic with responsive frontend pages.',
+    improvements:
+      'Add reviews and ratings, improve skill discovery, develop booking notifications, and strengthen session management and account security.',
+    details:
+      'Built a platform concept for university students to exchange skills and academic support. The project uses PHP for backend business logic and MySQL for relational data, including user profiles and session scheduling.',
+  },
+  {
     name: 'Catch the Ball',
     category: 'Desktop Game',
-    image:
-      'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=85',
-    imageAlt: 'Retro arcade gaming setup',
+    coverTitle: 'Catch the Ball',
+    coverSubtitle: 'Java · Arcade Game',
+    imageAlt: 'Custom cover for Catch the Ball',
     description:
       'A Java desktop arcade game focused on interactive gameplay, object movement, collision detection, and scoring.',
     tech: ['Java', 'Java Swing', 'Java AWT', 'Object-Oriented Programming'],
@@ -134,175 +164,293 @@ function Projects() {
   const [selectedProject, setSelectedProject] = useState(null)
 
   return (
-    <section id="projects" className="projects-section">
+    <section id="projects" className="projects-editorial">
       <style>{`
-        .projects-section {
-          padding: 100px 24px;
-          background: var(--bg-main, #f7f8f3);
-          color: var(--text-main, #25352e);
+        .projects-editorial {
+          --project-green: #123c32;
+          --project-dark: #0b2923;
+          --project-bone: #f2ebdd;
+          --project-muted: #6d766c;
+          --project-red: #e34234;
+
+          padding: 110px 24px;
+          background: var(--project-bone);
+          color: var(--project-dark);
         }
 
-        .projects-wrap {
+        .projects-editorial-wrap {
           max-width: 1150px;
           margin: 0 auto;
         }
 
-        .projects-heading {
-          margin-bottom: 12px;
-          color: var(--sage-deep, #304c3d);
+        .projects-editorial-heading {
+          display: flex;
+          align-items: flex-end;
+          justify-content: space-between;
+          gap: 35px;
+          margin-bottom: 55px;
+        }
+
+        .projects-editorial-label {
+          display: inline-block;
+          margin-bottom: 18px;
+          color: var(--project-red);
+          font-family: var(--mono, monospace);
+          font-size: 0.75rem;
+          letter-spacing: 0.16em;
+          text-transform: uppercase;
+        }
+
+        .projects-editorial-title {
+          margin: 0;
+          color: var(--project-green);
           font-family: var(--serif, Georgia, serif);
-          font-size: clamp(2rem, 4vw, 3rem);
-          text-align: center;
+          font-size: clamp(2.8rem, 6vw, 5rem);
+          font-weight: 500;
+          letter-spacing: -0.055em;
+          line-height: 1.05;
         }
 
-        .projects-subtitle {
-          max-width: 600px;
-          margin: 0 auto 44px;
-          color: var(--text-muted, #68746c);
-          font-size: 1rem;
-          line-height: 1.8;
-          text-align: center;
+        .projects-editorial-title span {
+          color: var(--project-red);
+          font-style: italic;
         }
 
-        .projects-grid {
+        .projects-editorial-intro {
+          max-width: 340px;
+          margin: 0 0 5px;
+          color: var(--project-muted);
+          font-size: 0.95rem;
+          line-height: 1.9;
+        }
+
+        .projects-editorial-grid {
           display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 26px;
-          align-items: stretch;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 28px;
         }
 
-        .project-card {
+        .projects-editorial-card {
           min-width: 0;
           overflow: hidden;
-          display: flex;
-          flex-direction: column;
-          background: var(--bg-cream, #fffef9);
-          border: 1px solid var(--sage-border, #dce5d9);
-          border-radius: 16px;
-          transition: transform .25s ease, box-shadow .25s ease;
+          background: #fffaf0;
+          border: 1px solid rgba(18, 60, 50, 0.14);
+          transition: transform 0.25s ease;
         }
 
-        .project-card:hover {
+        .projects-editorial-card:hover {
           transform: translateY(-5px);
-          box-shadow: 0 12px 30px rgba(43, 66, 49, .10);
         }
 
-        .project-image-wrap {
+        .projects-editorial-card.featured {
+          grid-column: 1 / -1;
+          display: grid;
+          grid-template-columns: 1.15fr 0.85fr;
+          background: var(--project-green);
+          color: var(--project-bone);
+        }
+
+        .projects-editorial-image-wrap {
           position: relative;
-          height: 190px;
+          min-height: 230px;
           overflow: hidden;
-          background: var(--sage-light, #e8efe5);
+          background: #d9d0bd;
         }
 
-        .project-image {
+        .projects-editorial-card.featured .projects-editorial-image-wrap {
+          min-height: 390px;
+        }
+
+        .projects-editorial-image {
           display: block;
           width: 100%;
           height: 100%;
+          min-height: 230px;
           object-fit: cover;
-          transition: transform .4s ease;
+          transition: transform 0.5s ease;
         }
 
-        .project-card:hover .project-image {
+        .projects-editorial-card:hover .projects-editorial-image {
           transform: scale(1.04);
         }
 
-        .project-category {
-          position: absolute;
-          left: 14px;
-          bottom: 14px;
-          padding: 6px 10px;
-          border: 1px solid rgba(255,255,255,.65);
-          border-radius: 20px;
-          background: rgba(255,255,255,.92);
-          color: #304c3d;
-          font-size: .72rem;
-          font-weight: 600;
+        .projects-editorial-card.featured .projects-editorial-image {
+          min-height: 390px;
         }
 
-        .project-card-body {
+        .projects-editorial-cover {
           display: flex;
-          flex: 1;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          min-height: 230px;
+          height: 100%;
+          padding: 35px;
+          background:
+            radial-gradient(circle at 80% 20%, rgba(227, 66, 52, 0.28), transparent 35%),
+            linear-gradient(135deg, #123c32, #0b2923);
+          color: #f2ebdd;
+        }
+
+        .projects-editorial-cover::before {
+          content: '';
+          width: 45px;
+          height: 4px;
+          margin-bottom: 25px;
+          background: #e34234;
+        }
+
+        .projects-editorial-cover-title {
+          margin: 0;
+          font-family: var(--serif, Georgia, serif);
+          font-size: clamp(2rem, 5vw, 3.5rem);
+          font-weight: 500;
+          line-height: 1.1;
+        }
+
+        .projects-editorial-cover-subtitle {
+          margin-top: 14px;
+          color: #d9d0bd;
+          font-size: 0.8rem;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+        }
+
+        .projects-editorial-card.featured .projects-editorial-cover {
+          min-height: 390px;
+        }
+
+        .projects-editorial-category {
+          position: absolute;
+          left: 18px;
+          bottom: 18px;
+          padding: 8px 12px;
+          background: var(--project-bone);
+          color: var(--project-green);
+          font-family: var(--mono, monospace);
+          font-size: 0.7rem;
+          letter-spacing: 0.04em;
+        }
+
+        .projects-editorial-body {
+          display: flex;
           flex-direction: column;
           align-items: flex-start;
-          padding: 23px;
+          padding: 27px;
         }
 
-        .project-card h3 {
-          margin: 0 0 12px;
-          color: var(--sage-deep, #304c3d);
+        .projects-editorial-card.featured .projects-editorial-body {
+          justify-content: center;
+          padding: 42px;
+        }
+
+        .projects-editorial-number {
+          margin-bottom: 18px;
+          color: var(--project-red);
+          font-family: var(--mono, monospace);
+          font-size: 0.75rem;
+          letter-spacing: 0.1em;
+        }
+
+        .projects-editorial-card h3 {
+          margin: 0 0 13px;
+          color: var(--project-green);
           font-family: var(--serif, Georgia, serif);
-          font-size: 1.35rem;
-          line-height: 1.4;
+          font-size: clamp(1.5rem, 3vw, 2rem);
+          font-weight: 500;
+          line-height: 1.2;
         }
 
-        .project-description {
-          margin: 0 0 20px;
-          color: var(--text-muted, #68746c);
-          font-size: .92rem;
-          line-height: 1.75;
+        .projects-editorial-card.featured h3 {
+          color: var(--project-bone);
+          font-size: clamp(2rem, 4vw, 3rem);
         }
 
-        .project-tags {
+        .projects-editorial-description {
+          margin: 0 0 24px;
+          color: var(--project-muted);
+          font-size: 0.9rem;
+          line-height: 1.8;
+        }
+
+        .projects-editorial-card.featured .projects-editorial-description {
+          color: #d4d9ce;
+          font-size: 0.95rem;
+        }
+
+        .projects-editorial-tags {
           display: flex;
           flex-wrap: wrap;
-          gap: 7px;
-          margin-top: auto;
-          margin-bottom: 22px;
+          gap: 8px;
+          margin: auto 0 24px;
+          padding: 0;
+          list-style: none;
         }
 
-        .project-tag {
-          padding: 5px 9px;
-          border: 1px solid var(--sage-border, #dce5d9);
-          border-radius: 6px;
-          background: var(--sage-light, #e8efe5);
-          color: var(--sage-deep, #304c3d);
-          font-size: .73rem;
+        .projects-editorial-tag {
+          padding: 7px 10px;
+          border: 1px solid rgba(18, 60, 50, 0.22);
+          color: var(--project-green);
+          font-size: 0.73rem;
         }
 
-        .project-actions {
+        .projects-editorial-card.featured .projects-editorial-tag {
+          border-color: rgba(242, 235, 221, 0.35);
+          color: var(--project-bone);
+        }
+
+        .projects-editorial-actions {
           display: flex;
           flex-wrap: wrap;
           gap: 10px;
           width: 100%;
         }
 
-        .project-button {
+        .projects-editorial-button {
           display: inline-flex;
           justify-content: center;
           align-items: center;
           min-height: 42px;
           padding: 10px 15px;
-          border: 1px solid var(--sage-deep, #304c3d);
-          border-radius: 8px;
+          border: 1px solid var(--project-green);
+          background: transparent;
+          color: var(--project-green);
           font: inherit;
-          font-size: .84rem;
+          font-size: 0.82rem;
           font-weight: 600;
-          text-align: center;
           text-decoration: none;
           cursor: pointer;
-          transition: background .2s ease, color .2s ease;
+          transition: background 0.2s ease, color 0.2s ease;
         }
 
-        .project-button-primary {
-          flex: 1;
-          background: var(--sage-deep, #304c3d);
+        .projects-editorial-button.primary {
+          background: var(--project-green);
+          color: var(--project-bone);
+        }
+
+        .projects-editorial-button:hover {
+          background: var(--project-red);
+          border-color: var(--project-red);
           color: white;
         }
 
-        .project-button-primary:hover {
-          background: #42634e;
+        .projects-editorial-card.featured .projects-editorial-button {
+          border-color: var(--project-bone);
+          color: var(--project-bone);
         }
 
-        .project-button-secondary {
-          background: transparent;
-          color: var(--sage-deep, #304c3d);
+        .projects-editorial-card.featured .projects-editorial-button.primary {
+          background: var(--project-bone);
+          color: var(--project-green);
         }
 
-        .project-button-secondary:hover {
-          background: var(--sage-light, #e8efe5);
+        .projects-editorial-card.featured .projects-editorial-button:hover {
+          background: var(--project-red);
+          border-color: var(--project-red);
+          color: white;
         }
 
-        .project-modal-backdrop {
+        .projects-modal-backdrop {
           position: fixed;
           inset: 0;
           z-index: 1000;
@@ -310,174 +458,209 @@ function Projects() {
           align-items: center;
           justify-content: center;
           padding: 20px;
-          background: rgba(20, 31, 25, .68);
+          background: rgba(11, 41, 35, 0.82);
           backdrop-filter: blur(5px);
         }
 
-        .project-modal {
+        .projects-modal {
           position: relative;
           width: 100%;
           max-width: 760px;
           max-height: 88vh;
           overflow-y: auto;
-          border: 1px solid var(--sage-border, #dce5d9);
-          border-radius: 18px;
-          background: var(--bg-cream, #fffef9);
-          color: var(--text-main, #25352e);
-          box-shadow: 0 24px 80px rgba(0, 0, 0, .22);
+          background: var(--project-bone);
+          color: var(--project-dark);
         }
 
-        .project-modal-image {
+        .projects-modal-image {
           display: block;
           width: 100%;
           height: 240px;
           object-fit: cover;
         }
 
-        .project-modal-content {
-          padding: 30px;
+        .projects-modal-content {
+          padding: 32px;
         }
 
-        .project-modal h3 {
-          margin: 0 0 10px;
-          color: var(--sage-deep, #304c3d);
+        .projects-modal h3 {
+          margin: 12px 0;
+          color: var(--project-green);
           font-family: var(--serif, Georgia, serif);
-          font-size: clamp(1.7rem, 4vw, 2.2rem);
+          font-size: clamp(1.8rem, 4vw, 2.5rem);
+          font-weight: 500;
         }
 
-        .project-modal h4 {
-          margin: 24px 0 8px;
-          color: var(--sage-deep, #304c3d);
-          font-size: 1rem;
+        .projects-modal h4 {
+          margin: 25px 0 9px;
+          color: var(--project-green);
+          font-size: 0.95rem;
         }
 
-        .project-modal p {
+        .projects-modal p {
           margin: 0;
-          color: var(--text-muted, #68746c);
-          font-size: .95rem;
+          color: var(--project-muted);
+          font-size: 0.92rem;
           line-height: 1.8;
-          overflow-wrap: anywhere;
         }
 
-        .project-modal-close {
+        .projects-modal-close {
           position: absolute;
-          z-index: 2;
           top: 12px;
           right: 12px;
           width: 40px;
           height: 40px;
-          border: 1px solid rgba(255,255,255,.8);
+          border: 0;
           border-radius: 50%;
-          background: white;
-          color: #25352e;
+          background: var(--project-bone);
+          color: var(--project-green);
           font-size: 1.5rem;
           cursor: pointer;
         }
 
-        .project-modal-links {
+        .projects-modal-links {
           display: flex;
           flex-wrap: wrap;
-          gap: 12px;
+          gap: 10px;
           margin-top: 25px;
         }
 
-        .project-empty-link {
-          color: var(--text-muted, #68746c);
-          font-size: .85rem;
-        }
+        @media (max-width: 760px) {
+          .projects-editorial {
+            padding: 85px 20px;
+          }
 
-        @media (max-width: 950px) {
-          .projects-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+          .projects-editorial-heading {
+            display: block;
+          }
+
+          .projects-editorial-intro {
+            margin-top: 20px;
+          }
+
+          .projects-editorial-card.featured {
+            grid-template-columns: 1fr;
+          }
+
+          .projects-editorial-card.featured .projects-editorial-image-wrap,
+          .projects-editorial-card.featured .projects-editorial-image,
+          .projects-editorial-card.featured .projects-editorial-cover {
+            min-height: 260px;
+          }
+
+          .projects-editorial-card.featured .projects-editorial-body {
+            padding: 28px;
           }
         }
 
-        @media (max-width: 600px) {
-          .projects-section {
-            padding: 70px 16px;
-          }
-
-          .projects-grid {
+        @media (max-width: 560px) {
+          .projects-editorial-grid {
             grid-template-columns: 1fr;
             gap: 20px;
           }
 
-          .project-image-wrap {
-            height: 210px;
+          .projects-editorial-card.featured {
+            grid-column: auto;
           }
 
-          .project-card-body {
-            padding: 21px;
-          }
-
-          .project-modal-backdrop {
-            padding: 10px;
-          }
-
-          .project-modal-content {
+          .projects-editorial-body {
             padding: 22px;
           }
 
-          .project-modal-image {
-            height: 180px;
+          .projects-modal-backdrop {
+            padding: 10px;
           }
 
-          .project-modal-links .project-button {
-            flex: 1 1 100%;
+          .projects-modal-content {
+            padding: 22px;
+          }
+
+          .projects-modal-image {
+            height: 180px;
           }
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .project-card,
-          .project-image,
-          .project-button {
+          .projects-editorial-card,
+          .projects-editorial-image,
+          .projects-editorial-button {
             transition: none;
           }
         }
       `}</style>
 
-      <div className="projects-wrap">
-        <h2 className="projects-heading section-title">Featured Projects</h2>
+      <div className="projects-editorial-wrap">
+        <div className="projects-editorial-heading">
+          <div>
+            <span className="projects-editorial-label">
+              04 / Selected Work
+            </span>
 
-        <p className="projects-subtitle">
-          A selection of my work in full-stack development, mobile
-          applications, research, and software engineering.
-        </p>
+            <h2 className="projects-editorial-title">
+              Things I've <span>Built.</span>
+            </h2>
+          </div>
 
-        <div className="projects-grid">
-          {projects.map((project) => (
-            <article className="project-card" key={project.name}>
-              <div className="project-image-wrap">
-                <img
-                  className="project-image"
-                  src={project.image}
-                  alt={project.imageAlt}
-                  loading="lazy"
-                />
-                <span className="project-category">
+          <p className="projects-editorial-intro">
+            A collection of projects, experiments, and research that
+            reflect my journey through software development.
+          </p>
+        </div>
+
+        <div className="projects-editorial-grid">
+          {projects.map((project, index) => (
+            <article
+              className={`projects-editorial-card ${index === 0 ? 'featured' : ''}`}
+              key={project.name}
+            >
+              <div className="projects-editorial-image-wrap">
+                {project.image ? (
+                  <img
+                    className="projects-editorial-image"
+                    src={project.image}
+                    alt={project.imageAlt}
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="projects-editorial-cover">
+                    <h3 className="projects-editorial-cover-title">
+                      {project.coverTitle}
+                    </h3>
+
+                    <span className="projects-editorial-cover-subtitle">
+                      {project.coverSubtitle}
+                    </span>
+                  </div>
+                )}
+
+                <span className="projects-editorial-category">
                   {project.category}
                 </span>
               </div>
 
-              <div className="project-card-body">
+              <div className="projects-editorial-body">
+                <span className="projects-editorial-number">
+                  / PROJECT {String(index + 1).padStart(2, '0')}
+                </span>
+
                 <h3>{project.name}</h3>
 
-                <p className="project-description">
+                <p className="projects-editorial-description">
                   {project.description}
                 </p>
 
-                <div className="project-tags">
+                <ul className="projects-editorial-tags">
                   {project.tech.map((item) => (
-                    <span className="project-tag" key={item}>
+                    <li className="projects-editorial-tag" key={item}>
                       {item}
-                    </span>
+                    </li>
                   ))}
-                </div>
+                </ul>
 
-                <div className="project-actions">
+                <div className="projects-editorial-actions">
                   <button
                     type="button"
-                    className="project-button project-button-primary"
+                    className="projects-editorial-button primary"
                     onClick={() => setSelectedProject(project)}
                     aria-label={`View details for ${project.name}`}
                   >
@@ -486,7 +669,7 @@ function Projects() {
 
                   {project.live && (
                     <a
-                      className="project-button project-button-secondary"
+                      className="projects-editorial-button"
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -503,7 +686,7 @@ function Projects() {
 
       {selectedProject && (
         <div
-          className="project-modal-backdrop"
+          className="projects-modal-backdrop"
           onClick={(event) => {
             if (event.target === event.currentTarget) {
               setSelectedProject(null)
@@ -511,32 +694,44 @@ function Projects() {
           }}
         >
           <div
-            className="project-modal"
+            className="projects-modal"
             role="dialog"
             aria-modal="true"
-            aria-labelledby="project-modal-title"
+            aria-labelledby="projects-modal-title"
           >
             <button
               type="button"
-              className="project-modal-close"
+              className="projects-modal-close"
               onClick={() => setSelectedProject(null)}
               aria-label="Close project details"
             >
               ×
             </button>
 
-            <img
-              className="project-modal-image"
-              src={selectedProject.image}
-              alt={selectedProject.imageAlt}
-            />
+            {selectedProject.image ? (
+              <img
+                className="projects-modal-image"
+                src={selectedProject.image}
+                alt={selectedProject.imageAlt}
+              />
+            ) : (
+              <div className="projects-editorial-cover">
+                <h3 className="projects-editorial-cover-title">
+                  {selectedProject.coverTitle}
+                </h3>
 
-            <div className="project-modal-content">
-              <span className="project-category">
+                <span className="projects-editorial-cover-subtitle">
+                  {selectedProject.coverSubtitle}
+                </span>
+              </div>
+            )}
+
+            <div className="projects-modal-content">
+              <span className="projects-editorial-label">
                 {selectedProject.category}
               </span>
 
-              <h3 id="project-modal-title">
+              <h3 id="projects-modal-title">
                 {selectedProject.name}
               </h3>
 
@@ -544,13 +739,13 @@ function Projects() {
               <p>{selectedProject.details}</p>
 
               <h4>Technology Stack</h4>
-              <div className="project-tags">
+              <ul className="projects-editorial-tags">
                 {selectedProject.tech.map((item) => (
-                  <span className="project-tag" key={item}>
+                  <li className="projects-editorial-tag" key={item}>
                     {item}
-                  </span>
+                  </li>
                 ))}
-              </div>
+              </ul>
 
               <h4>Challenges and Learning</h4>
               <p>{selectedProject.challenge}</p>
@@ -558,10 +753,10 @@ function Projects() {
               <h4>Future Improvements</h4>
               <p>{selectedProject.improvements}</p>
 
-              <div className="project-modal-links">
+              <div className="projects-modal-links">
                 {selectedProject.live && (
                   <a
-                    className="project-button project-button-primary"
+                    className="projects-editorial-button primary"
                     href={selectedProject.live}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -572,7 +767,7 @@ function Projects() {
 
                 {selectedProject.github && (
                   <a
-                    className="project-button project-button-secondary"
+                    className="projects-editorial-button"
                     href={selectedProject.github}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -582,9 +777,7 @@ function Projects() {
                 )}
 
                 {!selectedProject.live && !selectedProject.github && (
-                  <span className="project-empty-link">
-                    Project links will be added when available.
-                  </span>
+                  <p>Live demo and repository links are not available.</p>
                 )}
               </div>
             </div>

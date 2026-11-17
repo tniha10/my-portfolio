@@ -1,53 +1,66 @@
 
 function Footer() {
   return (
-    <footer className="footer">
-      <p>© 2026 Tahsina Mamun Niha. All rights reserved.</p>
-      <p className="footer-small">
-        Built with React and Vite.
-      </p>
-    </footer>
+    <>
+      <style>{`
+        .footer-editorial {
+          background: #f2ebdd;
+          color: #123c32;
+          padding: 30px 7%;
+          border-top: 3px solid #e34234;
+        }
+
+        .footer-editorial-container {
+          max-width: 1150px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 15px;
+        }
+
+        .footer-editorial p {
+          margin: 0;
+          font-size: 0.85rem;
+          line-height: 1.7;
+        }
+
+        .footer-editorial-credit {
+          color: #64736a;
+        }
+
+        .footer-editorial-credit span {
+          color: #e34234;
+          font-weight: 700;
+        }
+
+        @media (max-width: 600px) {
+          .footer-editorial {
+            padding: 25px 6%;
+          }
+
+          .footer-editorial-container {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+          }
+        }
+      `}</style>
+
+      <footer className="footer-editorial">
+        <div className="footer-editorial-container">
+          <p>
+            © 2026 Tahsina Mamun Niha. All rights reserved.
+          </p>
+
+          <p className="footer-editorial-credit">
+            Designed & developed with <span>React</span> and Vite.
+          </p>
+        </div>
+      </footer>
+    </>
   )
-}
-
-const styles = `
-  .footer {
-    background-color: #15151c;
-    border-top: 1px solid #2a2a35;
-    padding: 30px 20px;
-    text-align: center;
-    color: #c8c8d4;
-    font-size: 15px;
-  }
-
-  .footer p {
-    margin: 0;
-  }
-
-  .footer-small {
-    margin-top: 6px !important;
-    font-size: 13px;
-    color: #a0a0b0;
-  }
-
-  @media (max-width: 480px) {
-    .footer {
-      padding: 24px 16px;
-      font-size: 14px;
-    }
-
-    .footer-small {
-      font-size: 12px;
-    }
-  }
-`
-
-const styleSheet = document.createElement('style')
-styleSheet.textContent = styles
-
-if (!document.querySelector('[data-footer-styles]')) {
-  styleSheet.setAttribute('data-footer-styles', 'true')
-  document.head.appendChild(styleSheet)
 }
 
 export default Footer

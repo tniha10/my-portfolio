@@ -3,199 +3,238 @@ function Contact() {
   return (
     <>
       <style>{`
-        .contact {
-          padding: 100px 24px;
-          background-color: var(--sage-light);
-          border-top: 1px solid var(--sage-border);
+        .contact-editorial {
+          padding: 110px 24px;
+          background: #123c32;
+          color: #f2ebdd;
         }
 
-        .contact-container {
-          max-width: 700px;
+        .contact-editorial-container {
+          max-width: 1050px;
           margin: 0 auto;
-          text-align: center;
         }
 
-        .contact .section-title {
-          margin-bottom: 20px;
+        .contact-editorial-label {
+          display: inline-block;
+          margin-bottom: 24px;
+          color: #e34234;
+          font-family: var(--mono, monospace);
+          font-size: 0.75rem;
+          letter-spacing: 0.16em;
+          text-transform: uppercase;
         }
 
-        .contact-text {
-          max-width: 560px;
-          margin: 0 auto 32px;
-          font-size: 1.05rem;
-          line-height: 1.8;
-          color: var(--text-muted);
+        .contact-editorial-content {
+          display: grid;
+          grid-template-columns: 1.2fr 0.8fr;
+          align-items: end;
+          gap: 50px;
         }
 
-        .contact-links {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-wrap: wrap;
-          gap: 14px;
+        .contact-editorial-title {
+          margin: 0 0 25px;
+          color: #f2ebdd;
+          font-family: var(--serif, Georgia, serif);
+          font-size: clamp(3.2rem, 8vw, 6.5rem);
+          font-weight: 500;
+          letter-spacing: -0.06em;
+          line-height: 1;
+        }
+
+        .contact-editorial-title span {
+          color: #e34234;
+          font-style: italic;
+        }
+
+        .contact-editorial-text {
+          max-width: 530px;
+          margin: 0;
+          color: #d4d9ce;
+          font-size: 1rem;
+          line-height: 1.9;
+        }
+
+        .contact-editorial-right {
+          padding-bottom: 5px;
+        }
+
+        .contact-editorial-email-label {
+          display: block;
+          margin-bottom: 12px;
+          color: #b9c4b5;
+          font-family: var(--mono, monospace);
+          font-size: 0.72rem;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+        }
+
+        .contact-editorial-email {
+          display: inline-block;
           margin-bottom: 28px;
+          color: #f2ebdd;
+          font-family: var(--serif, Georgia, serif);
+          font-size: clamp(1.1rem, 2.5vw, 1.55rem);
+          text-decoration: none;
+          overflow-wrap: anywhere;
+          border-bottom: 1px solid rgba(242, 235, 221, 0.4);
+          padding-bottom: 8px;
+          transition: color 0.2s ease;
         }
 
-        .contact .button {
+        .contact-editorial-email:hover {
+          color: #e34234;
+        }
+
+        .contact-editorial-links {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+
+        .contact-editorial-button {
           display: inline-flex;
           justify-content: center;
           align-items: center;
-          min-width: 125px;
-          padding: 13px 22px;
-          border: 1px solid var(--sage-deep);
-          border-radius: 8px;
-          font: inherit;
-          font-size: 0.95rem;
+          min-height: 44px;
+          padding: 11px 18px;
+          border: 1px solid #f2ebdd;
+          color: #f2ebdd;
+          background: transparent;
+          font-size: 0.85rem;
           font-weight: 600;
           text-decoration: none;
-          cursor: pointer;
-          transition:
-            background-color 0.2s ease,
-            color 0.2s ease,
-            transform 0.2s ease;
+          transition: all 0.2s ease;
         }
 
-        .contact .button-filled {
-          background-color: var(--sage-deep);
+        .contact-editorial-button.primary {
+          background: #e34234;
+          border-color: #e34234;
           color: white;
         }
 
-        .contact .button-outline {
-          background-color: transparent;
-          color: var(--sage-deep);
-        }
-
-        .contact .button:hover {
+        .contact-editorial-button:hover {
+          background: #f2ebdd;
+          border-color: #f2ebdd;
+          color: #123c32;
           transform: translateY(-3px);
         }
 
-        .contact .button-filled:hover {
-          filter: brightness(0.92);
-        }
-
-        .contact .button-outline:hover {
-          background-color: var(--sage-deep);
-          color: white;
-        }
-
-        .contact .button:focus-visible {
-          outline: 3px solid var(--sage-deep);
-          outline-offset: 4px;
-        }
-
-        .contact-details {
+        .contact-editorial-bottom {
           display: flex;
-          flex-direction: column;
+          justify-content: space-between;
           align-items: center;
-          gap: 12px;
-          margin-top: 8px;
+          gap: 20px;
+          margin-top: 85px;
+          padding-top: 22px;
+          border-top: 1px solid rgba(242, 235, 221, 0.25);
+          color: #b9c4b5;
+          font-family: var(--mono, monospace);
+          font-size: 0.72rem;
+          letter-spacing: 0.06em;
         }
 
-        .contact-detail {
+        .contact-editorial-bottom p {
           margin: 0;
-          color: var(--sage-deep);
-          font-size: 0.95rem;
-          line-height: 1.7;
-          overflow-wrap: anywhere;
         }
 
-        .contact-detail a {
-          color: inherit;
-          text-decoration: none;
+        .contact-editorial-bottom span {
+          color: #e34234;
         }
 
-        .contact-detail a:hover {
-          text-decoration: underline;
+        .contact-editorial-button:focus-visible,
+        .contact-editorial-email:focus-visible {
+          outline: 3px solid #e34234;
+          outline-offset: 5px;
         }
 
-        .contact-label {
-          font-weight: 600;
-          margin-right: 6px;
-        }
-
-        @media (max-width: 480px) {
-          .contact {
-            padding: 76px 20px;
+        @media (max-width: 700px) {
+          .contact-editorial {
+            padding: 85px 20px;
           }
 
-          .contact-links {
-            gap: 10px;
+          .contact-editorial-content {
+            grid-template-columns: 1fr;
+            gap: 40px;
           }
 
-          .contact .button {
-            min-width: 110px;
-            padding: 12px 16px;
-          }
-
-          .contact-text {
-            font-size: 1rem;
+          .contact-editorial-bottom {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 60px;
           }
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .contact .button {
+          .contact-editorial-button,
+          .contact-editorial-email {
             transition: none;
           }
 
-          .contact .button:hover {
+          .contact-editorial-button:hover {
             transform: none;
           }
         }
       `}</style>
 
-      <section id="contact" className="contact">
-        <div className="contact-container">
-          <h2 className="section-title">Let's Connect</h2>
+      <section id="contact" className="contact-editorial">
+        <div className="contact-editorial-container">
+          <span className="contact-editorial-label">
+            05 / Get In Touch
+          </span>
 
-          <p className="contact-text">
-            I'm looking for an internship and hoping to grow into a
-            full-stack developer. Have an opportunity or want to talk
-            about a project? I'd love to hear from you.
-          </p>
+          <div className="contact-editorial-content">
+            <div>
+              <h2 className="contact-editorial-title">
+                Let's make
+                <br />
+                something <span>great.</span>
+              </h2>
 
-          <div className="contact-links">
-            <a
-              href="mailto:tahsinamamun10@gmail.com"
-              className="button button-filled"
-            >
-              Email Me
-            </a>
+              <p className="contact-editorial-text">
+                I'm looking for an internship and hoping to grow
+                into a full-stack developer. Have an opportunity
+                or want to talk about a project? I'd love to
+                hear from you.
+              </p>
+            </div>
 
-            <a
-              href="https://github.com/tniha10"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="button button-outline"
-              aria-label="View my GitHub profile"
-            >
-              GitHub ↗
-            </a>
+            <div className="contact-editorial-right">
+              <span className="contact-editorial-email-label">
+                Send me an email
+              </span>
 
-            <a
-              href="https://www.linkedin.com/in/tahsina-niha"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="button button-outline"
-              aria-label="Connect with me on LinkedIn"
-            >
-              LinkedIn ↗
-            </a>
+              <a
+                href="mailto:tahsinamamun10@gmail.com"
+                className="contact-editorial-email"
+              >
+                tahsinamamun10@gmail.com ↗
+              </a>
+
+              <div className="contact-editorial-links">
+                <a
+                  href="https://github.com/tniha10"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-editorial-button primary"
+                >
+                  GitHub ↗
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/tahsina-niha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-editorial-button"
+                >
+                  LinkedIn ↗
+                </a>
+              </div>
+            </div>
           </div>
 
-          <div className="contact-details">
-            <p className="contact-detail">
-              <span className="contact-label">Email:</span>
-              <a href="mailto:tahsinamamun10@gmail.com">
-                tahsinamamun10@gmail.com
-              </a>
-            </p>
-
-            <p className="contact-detail">
-              <span className="contact-label">Phone:</span>
-              <a href="tel:+8801600315677">
-                +8801600315677
-              </a>
-            </p>
+          <div className="contact-editorial-bottom">
+            <p>THANK YOU FOR STOPPING BY.</p>
+            <p>DESIGNED & DEVELOPED BY TAHSINA</p>
           </div>
         </div>
       </section>

@@ -1,3 +1,4 @@
+
 const skillGroups = [
   {
     number: '01',
@@ -59,223 +60,230 @@ const skillGroups = [
 
 function Skills() {
   return (
-    <section id="skills" className="skills-section">
+    <section id="skills" className="skills-editorial">
       <style>{`
-        .skills-section {
-          --skills-bg: var(--bg-cream, #faf9f5);
-          --skills-card: var(--sage-light, #f0f3eb);
-          --skills-border: var(--sage-border, #dce4d6);
-          --skills-deep: var(--sage-deep, #455b46);
-          --skills-text: var(--text-muted, #657064);
-          padding: 100px 24px;
-          background: var(--skills-bg);
+        .skills-editorial {
+          --skills-green: #123c32;
+          --skills-dark: #0b2923;
+          --skills-bone: #f2ebdd;
+          --skills-muted: #c5cabb;
+          --skills-red: #e34234;
+
+          padding: 110px 24px;
+          color: var(--skills-bone);
+          background: var(--skills-green);
         }
 
-        .skills-container {
-          max-width: 1100px;
+        .skills-editorial-container {
+          max-width: 1150px;
           margin: 0 auto;
         }
 
-        .skills-heading {
-          max-width: 650px;
-          margin-bottom: 42px;
+        .skills-editorial-heading {
+          display: flex;
+          align-items: flex-end;
+          justify-content: space-between;
+          gap: 40px;
+          margin-bottom: 65px;
         }
 
-        .skills-eyebrow {
+        .skills-editorial-label {
           display: inline-block;
-          margin-bottom: 14px;
-          color: var(--skills-deep);
+          margin-bottom: 18px;
+          color: var(--skills-red);
           font-family: var(--mono, monospace);
-          font-size: 0.76rem;
-          letter-spacing: 0.14em;
+          font-size: 0.75rem;
+          letter-spacing: 0.16em;
           text-transform: uppercase;
         }
 
-        .skills-title {
-          margin: 0 0 16px;
-          color: var(--skills-deep);
-          font-size: clamp(2rem, 4vw, 3rem);
-          font-weight: 600;
-          letter-spacing: -0.045em;
-          line-height: 1.15;
-        }
-
-        .skills-intro {
+        .skills-editorial-title {
+          max-width: 600px;
           margin: 0;
-          color: var(--skills-text);
-          font-size: 1rem;
-          line-height: 1.8;
+          color: var(--skills-bone);
+          font-family: var(--serif, Georgia, serif);
+          font-size: clamp(2.8rem, 6vw, 5rem);
+          font-weight: 500;
+          letter-spacing: -0.055em;
+          line-height: 1.05;
         }
 
-        .skills-grid {
+        .skills-editorial-title span {
+          color: var(--skills-red);
+          font-style: italic;
+        }
+
+        .skills-editorial-intro {
+          max-width: 330px;
+          margin: 0 0 6px;
+          color: var(--skills-muted);
+          font-size: 0.95rem;
+          line-height: 1.9;
+        }
+
+        .skills-editorial-grid {
           display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 20px;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          column-gap: 65px;
         }
 
-        .skills-card {
+        .skills-editorial-item {
           min-width: 0;
-          padding: 26px 23px;
-          background: var(--skills-card);
-          border: 1px solid var(--skills-border);
-          border-radius: 18px;
-          transition:
-            transform 0.25s ease,
-            box-shadow 0.25s ease,
-            border-color 0.25s ease;
+          padding: 30px 0 34px;
+          border-top: 1px solid rgba(242, 235, 221, 0.25);
         }
 
-        .skills-card:hover {
-          transform: translateY(-5px);
-          border-color: var(--skills-deep);
-          box-shadow: 0 12px 30px rgba(55, 75, 52, 0.08);
-        }
-
-        .skills-card-top {
+        .skills-editorial-top {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          gap: 12px;
-          margin-bottom: 22px;
+          gap: 15px;
+          margin-bottom: 25px;
         }
 
-        .skills-icon {
-          display: grid;
-          width: 44px;
-          height: 44px;
-          place-items: center;
-          color: var(--skills-deep);
-          background: var(--skills-bg);
-          border: 1px solid var(--skills-border);
-          border-radius: 14px;
-          font-size: 1.4rem;
-        }
-
-        .skills-number {
-          color: var(--skills-text);
+        .skills-editorial-number {
+          color: var(--skills-red);
           font-family: var(--mono, monospace);
-          font-size: 0.78rem;
-          opacity: 0.75;
+          font-size: 0.8rem;
+          letter-spacing: 0.08em;
         }
 
-        .skills-card h3 {
-          margin: 0 0 9px;
-          color: var(--skills-deep);
-          font-size: 1.08rem;
-          font-weight: 600;
-          line-height: 1.4;
+        .skills-editorial-icon {
+          display: grid;
+          width: 42px;
+          height: 42px;
+          place-items: center;
+          color: var(--skills-bone);
+          border: 1px solid rgba(242, 235, 221, 0.35);
+          border-radius: 50%;
+          font-size: 1.2rem;
         }
 
-        .skills-description {
-          min-height: 48px;
-          margin: 0 0 20px;
-          color: var(--skills-text);
-          font-size: 0.87rem;
+        .skills-editorial-item h3 {
+          margin: 0 0 10px;
+          color: var(--skills-bone);
+          font-family: var(--serif, Georgia, serif);
+          font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+          font-weight: 500;
+          letter-spacing: -0.025em;
+        }
+
+        .skills-editorial-description {
+          margin: 0 0 22px;
+          color: var(--skills-muted);
+          font-size: 0.88rem;
           line-height: 1.7;
         }
 
-        .skills-tags {
+        .skills-editorial-tags {
           display: flex;
           flex-wrap: wrap;
-          gap: 8px;
+          gap: 9px;
           margin: 0;
           padding: 0;
           list-style: none;
         }
 
-        .skills-tag {
-          padding: 7px 10px;
-          color: var(--skills-deep);
-          background: var(--skills-bg);
-          border: 1px solid var(--skills-border);
-          border-radius: 8px;
+        .skills-editorial-tag {
+          padding: 8px 12px;
+          color: var(--skills-bone);
+          background: transparent;
+          border: 1px solid rgba(242, 235, 221, 0.3);
+          border-radius: 3px;
           font-size: 0.78rem;
-          line-height: 1.35;
-          overflow-wrap: anywhere;
+          line-height: 1.3;
           transition:
+            color 0.2s ease,
             background 0.2s ease,
-            color 0.2s ease;
+            border-color 0.2s ease;
         }
 
-        .skills-tag:hover {
-          color: white;
-          background: var(--skills-deep);
+        .skills-editorial-tag:hover {
+          color: var(--skills-dark);
+          background: var(--skills-bone);
+          border-color: var(--skills-bone);
         }
 
-        @media (max-width: 900px) {
-          .skills-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+        @media (max-width: 760px) {
+          .skills-editorial {
+            padding: 85px 22px;
+          }
+
+          .skills-editorial-heading {
+            display: block;
+            margin-bottom: 45px;
+          }
+
+          .skills-editorial-intro {
+            margin-top: 22px;
+          }
+
+          .skills-editorial-grid {
+            column-gap: 35px;
           }
         }
 
         @media (max-width: 560px) {
-          .skills-section {
-            padding: 72px 18px;
+          .skills-editorial {
+            padding: 75px 18px;
           }
 
-          .skills-grid {
+          .skills-editorial-grid {
             grid-template-columns: 1fr;
-            gap: 16px;
           }
 
-          .skills-card {
-            padding: 24px 20px;
-          }
-
-          .skills-description {
-            min-height: 0;
+          .skills-editorial-item {
+            padding: 25px 0 30px;
           }
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .skills-card,
-          .skills-tag {
+          .skills-editorial-tag {
             transition: none;
-          }
-
-          .skills-card:hover {
-            transform: none;
           }
         }
       `}</style>
 
-      <div className="skills-container">
-        <div className="skills-heading">
-          <span className="skills-eyebrow">
-            A little about my toolkit
-          </span>
+      <div className="skills-editorial-container">
+        <div className="skills-editorial-heading">
+          <div>
+            <span className="skills-editorial-label">
+              03 / My Toolkit
+            </span>
 
-          <h2 className="skills-title">Skills & Technologies</h2>
+            <h2 className="skills-editorial-title">
+              Skills & <span>Technologies.</span>
+            </h2>
+          </div>
 
-          <p className="skills-intro">
-            From building web applications to exploring AI and machine
-            learning, here are the technologies and tools I work with
-            as I continue to grow as a developer.
+          <p className="skills-editorial-intro">
+            A collection of technologies, tools, and areas I have been
+            learning and working with to build useful digital experiences.
           </p>
         </div>
 
-        <div className="skills-grid">
+        <div className="skills-editorial-grid">
           {skillGroups.map((group) => (
-            <article className="skills-card" key={group.title}>
-              <div className="skills-card-top">
-                <span className="skills-icon" aria-hidden="true">
-                  {group.icon}
+            <article className="skills-editorial-item" key={group.title}>
+              <div className="skills-editorial-top">
+                <span className="skills-editorial-number">
+                  / {group.number}
                 </span>
 
-                <span className="skills-number">
-                  / {group.number}
+                <span className="skills-editorial-icon" aria-hidden="true">
+                  {group.icon}
                 </span>
               </div>
 
               <h3>{group.title}</h3>
 
-              <p className="skills-description">
+              <p className="skills-editorial-description">
                 {group.description}
               </p>
 
-              <ul className="skills-tags" aria-label={group.title}>
+              <ul className="skills-editorial-tags" aria-label={group.title}>
                 {group.skills.map((skill) => (
-                  <li className="skills-tag" key={skill}>
+                  <li className="skills-editorial-tag" key={skill}>
                     {skill}
                   </li>
                 ))}
